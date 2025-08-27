@@ -1,5 +1,6 @@
-package io.cx.platform.events;
+package io.cx.platform.events.codecs;
 
+import io.cx.platform.events.BaseEvent;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.eventbus.MessageCodec;
 import io.vertx.core.json.Json;
