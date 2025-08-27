@@ -12,6 +12,9 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = true)
 @ToString
 public final class ServingResourceCreated extends ServingResourceEvents{
+    public ServingResourceCreated() {
+        super(null);
+    }
     public ServingResourceCreated(ServingResourceInfo resourceInfo) {
         super(resourceInfo);
     }

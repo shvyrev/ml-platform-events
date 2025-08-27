@@ -11,11 +11,11 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = true)
 @ToString
 public final class DeleteRuntimeEvent extends ServingResourceEvents{
-    public DeleteRuntimeEvent(ServingResourceInfo resourceInfo) {
-        super(resourceInfo);
-    }
-
     public DeleteRuntimeEvent() {
         super(null);
+    }
+
+    public DeleteRuntimeEvent(ServingResourceInfo resourceInfo) {
+        super(resourceInfo);
     }
 }

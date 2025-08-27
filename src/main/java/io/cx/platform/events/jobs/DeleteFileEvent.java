@@ -15,6 +15,10 @@ public final class DeleteFileEvent extends JobEvents {
     private String bucket;
     private String object;
 
+    public DeleteFileEvent() {
+        super(null);
+    }
+
     public DeleteFileEvent(JobInfo jobInfo) {
         super(jobInfo);
     }

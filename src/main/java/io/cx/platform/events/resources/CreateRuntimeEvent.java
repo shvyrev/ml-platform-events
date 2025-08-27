@@ -17,6 +17,10 @@ public final class CreateRuntimeEvent extends ServingResourceEvents {
     private String schSizeLimit;
     private ContainerResources resources;
 
+    public CreateRuntimeEvent() {
+        super(null);
+    }
+
     public CreateRuntimeEvent(ServingResourceInfo resourceInfo) {
         super(resourceInfo);
     }

@@ -8,6 +8,10 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 @ToString
 public final class JobCreatedEvent extends JobEvents {
+    public JobCreatedEvent() {
+        super(null);
+    }
+
     public JobCreatedEvent(JobInfo jobInfo) {
         super(jobInfo);
     }

@@ -12,11 +12,11 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = true)
 @ToString
 public final class DeleteInferenceServiceEvent extends ServingResourceEvents {
-    public DeleteInferenceServiceEvent(ServingResourceInfo resourceInfo) {
-        super(resourceInfo);
-    }
-
     public DeleteInferenceServiceEvent() {
         super(null);
+    }
+
+    public DeleteInferenceServiceEvent(ServingResourceInfo resourceInfo) {
+        super(resourceInfo);
     }
 }

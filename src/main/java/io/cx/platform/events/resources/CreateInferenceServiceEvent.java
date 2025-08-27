@@ -12,20 +12,28 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = true)
 @ToString
 public final class CreateInferenceServiceEvent extends ServingResourceEvents {
-    private final String modelName;
-    private final String modelFormat;
-    private final String runtimeName;
-    private final String storageSecretKey;
-    private final String artifactPath;
-    private final String bucketName;
+    private String modelName;
+    private String modelFormat;
+    private String runtimeName;
+    private String storageSecretKey;
+    private String artifactPath;
+    private String bucketName;
+
+    public CreateInferenceServiceEvent() {
+        super(null);
+    }
+
+    public CreateInferenceServiceEvent(ServingResourceInfo resourceInfo) {
+        super(resourceInfo);
+    }
 
     public CreateInferenceServiceEvent(ServingResourceInfo resourceInfo, String modelName, String modelFormat, String runtimeName, String storageSecretKey, String artifactPath, String bucketName) {
         super(resourceInfo);
-    this.modelName = modelName;
-    this.modelFormat = modelFormat;
-    this.runtimeName = runtimeName;
-    this.storageSecretKey = storageSecretKey;
-    this.artifactPath = artifactPath;
-    this.bucketName = bucketName;
-}
+        this.modelName = modelName;
+        this.modelFormat = modelFormat;
+        this.runtimeName = runtimeName;
+        this.storageSecretKey = storageSecretKey;
+        this.artifactPath = artifactPath;
+        this.bucketName = bucketName;
+    }
 }

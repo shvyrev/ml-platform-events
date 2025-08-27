@@ -17,6 +17,10 @@ public final class RegistrationModelVersionStatusEvent extends JobEvents {
     private UUID modelId;
     private UUID versionId;
 
+    public RegistrationModelVersionStatusEvent() {
+        super(null);
+    }
+
     public RegistrationModelVersionStatusEvent(JobInfo jobInfo) {
         super(jobInfo);
     }
