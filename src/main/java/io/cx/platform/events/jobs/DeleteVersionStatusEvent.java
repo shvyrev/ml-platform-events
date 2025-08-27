@@ -1,5 +1,7 @@
 package io.cx.platform.events.jobs;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,7 +27,8 @@ public final class DeleteVersionStatusEvent extends JobEvents {
         super(null);
     }
 
-    public DeleteVersionStatusEvent(JobInfo jobInfo, UUID modelId, UUID versionId) {
+    @JsonCreator
+    public DeleteVersionStatusEvent(@JsonProperty("jobInfo") JobInfo jobInfo, @JsonProperty("modelId") UUID modelId,@JsonProperty("versionId") UUID versionId) {
         super(jobInfo);
         this.modelId = modelId;
         this.versionId = versionId;

@@ -1,5 +1,7 @@
 package io.cx.platform.events.jobs;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,7 +27,8 @@ public final class RegistrationModelVersionStatusEvent extends JobEvents {
         super(jobInfo);
     }
 
-    public RegistrationModelVersionStatusEvent(JobInfo jobInfo, UUID modelId, UUID versionId) {
+    @JsonCreator
+    public RegistrationModelVersionStatusEvent(@JsonProperty("jobInfo") JobInfo jobInfo,@JsonProperty("modelId") UUID modelId,@JsonProperty("versionId") UUID versionId) {
         super(jobInfo);
 
         this.modelId = modelId;

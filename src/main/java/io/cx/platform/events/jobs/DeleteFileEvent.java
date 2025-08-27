@@ -1,5 +1,7 @@
 package io.cx.platform.events.jobs;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
@@ -21,5 +23,14 @@ public final class DeleteFileEvent extends JobEvents {
 
     public DeleteFileEvent(JobInfo jobInfo) {
         super(jobInfo);
+    }
+
+    @JsonCreator
+    public DeleteFileEvent(@JsonProperty("jobInfo") JobInfo jobInfo,
+                           @JsonProperty("bucket") String bucket,
+                           @JsonProperty("object") String object) {
+        super(jobInfo);
+        this.bucket = bucket;
+        this.object = object;
     }
 }

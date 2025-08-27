@@ -1,4 +1,6 @@
 package io.cx.platform.events.resources;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,7 +17,8 @@ public final class DeleteRuntimeEvent extends ServingResourceEvents{
         super(null);
     }
 
-    public DeleteRuntimeEvent(ServingResourceInfo resourceInfo) {
+    @JsonCreator
+    public DeleteRuntimeEvent(@JsonProperty("resourceInfo")ServingResourceInfo resourceInfo) {
         super(resourceInfo);
     }
 }

@@ -1,5 +1,7 @@
 package io.cx.platform.events.jobs;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
@@ -11,7 +13,8 @@ public final class JobSucceededEvent extends JobEvents {
     public JobSucceededEvent() {
         super(null);
     }
-    public JobSucceededEvent(JobInfo jobInfo) {
+    @JsonCreator
+    public JobSucceededEvent(@JsonProperty("jobInfo") JobInfo jobInfo) {
         super(jobInfo);
     }
 }

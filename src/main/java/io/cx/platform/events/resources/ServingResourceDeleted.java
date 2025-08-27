@@ -1,5 +1,7 @@
 package io.cx.platform.events.resources;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +18,8 @@ public final class ServingResourceDeleted extends ServingResourceEvents {
         super(null);
     }
 
-    public ServingResourceDeleted(ServingResourceInfo info) {
+    @JsonCreator
+    public ServingResourceDeleted(@JsonProperty("resourceInfo")ServingResourceInfo info) {
         super(info);
     }
 }

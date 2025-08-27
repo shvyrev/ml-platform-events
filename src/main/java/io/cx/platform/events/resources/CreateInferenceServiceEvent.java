@@ -1,5 +1,7 @@
 package io.cx.platform.events.resources;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,7 +29,11 @@ public final class CreateInferenceServiceEvent extends ServingResourceEvents {
         super(resourceInfo);
     }
 
-    public CreateInferenceServiceEvent(ServingResourceInfo resourceInfo, String modelName, String modelFormat, String runtimeName, String storageSecretKey, String artifactPath, String bucketName) {
+    @JsonCreator
+    public CreateInferenceServiceEvent(@JsonProperty("resourceInfo") ServingResourceInfo resourceInfo,
+                                       @JsonProperty("modelName") String modelName,@JsonProperty("modelFormat") String modelFormat,
+                                       @JsonProperty("runtimeName") String runtimeName,@JsonProperty("storageSecretKey") String storageSecretKey,
+                                       @JsonProperty("artifactPath") String artifactPath,@JsonProperty("bucketName") String bucketName) {
         super(resourceInfo);
         this.modelName = modelName;
         this.modelFormat = modelFormat;
