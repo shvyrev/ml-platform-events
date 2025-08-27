@@ -1,5 +1,7 @@
 package io.cx.platform.events.resources;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,7 +27,10 @@ public final class CreateRuntimeEvent extends ServingResourceEvents {
         super(resourceInfo);
     }
 
-    public CreateRuntimeEvent(ServingResourceInfo resourceInfo, String schSizeLimit, ContainerResources resources) {
+    @JsonCreator
+    public CreateRuntimeEvent(@JsonProperty("resourceInfo") ServingResourceInfo resourceInfo,
+                              @JsonProperty("schSizeLimit") String schSizeLimit,
+                              @JsonProperty("resources") ContainerResources resources) {
         super(resourceInfo);
         this.schSizeLimit = schSizeLimit;
         this.resources = resources;
