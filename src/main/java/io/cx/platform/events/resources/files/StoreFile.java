@@ -1,7 +1,7 @@
 package io.cx.platform.events.resources.files;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.cx.platform.events.CmdEvent;
 import io.cx.platform.events.actors.Actor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -14,7 +14,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
 @ToString
-public final class StoreFile extends FileEvents implements CmdEvent {
+public final class StoreFile extends FileEvents implements FileCmdEvent {
     private final Actor actor;
 
     public StoreFile(Actor actor) {

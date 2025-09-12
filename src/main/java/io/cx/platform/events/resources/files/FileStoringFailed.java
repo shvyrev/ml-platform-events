@@ -20,7 +20,7 @@ public final class FileStoringFailed extends FileEvents {
         this.actor = null;
     }
 
-    public FileStoringFailed(StoreFile event) {
+    public FileStoringFailed(FileCmdEvent event) {
         super(event.getFileInfo());
         this.actor = event.getActor();
     }

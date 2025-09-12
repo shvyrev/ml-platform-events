@@ -17,7 +17,7 @@ public final class FileDeletionFailed extends FileEvents {
         this.actor = null;
     }
 
-    public FileDeletionFailed(DeleteFile event) {
+    public FileDeletionFailed(FileCmdEvent event) {
         super(event.getFileInfo());
         this.actor = event.getActor();
     }

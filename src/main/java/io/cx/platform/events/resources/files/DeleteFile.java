@@ -14,7 +14,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
 @ToString
-public final class DeleteFile extends FileEvents {
+public final class DeleteFile extends FileEvents implements FileCmdEvent {
     private final Actor actor;
 
     public DeleteFile(Actor actor) {
