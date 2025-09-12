@@ -1,7 +1,7 @@
 package io.cx.platform.events.resources.files;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.cx.platform.events.CmdEvent;
 import io.cx.platform.events.actors.Actor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -14,16 +14,16 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
 @ToString
-public final class DeleteFile extends FileEvents {
+public final class StoreFile extends FileEvents implements CmdEvent {
     private final Actor actor;
 
-    public DeleteFile(Actor actor) {
+    public StoreFile(Actor actor) {
         super(null);
         this.actor = actor;
     }
 
     @JsonCreator
-    public DeleteFile(@JsonProperty("fileInfo") FileInfo fileInfo, @JsonProperty("actor") Actor actor) {
+    public StoreFile(@JsonProperty("fileInfo") FileInfo fileInfo, @JsonProperty("actor") Actor actor) {
         super(fileInfo);
         this.actor = actor;
     }

@@ -1,8 +1,6 @@
 package io.cx.platform.events.resources.files;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+
+import lombok.*;
 import lombok.experimental.Accessors;
 
 @Getter
@@ -10,13 +8,12 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
 @ToString
-public final class AddFileOwner extends FileEvents {
-
-    public AddFileOwner() {
+public final class FileStoringFailed extends FileEvents {
+    public FileStoringFailed() {
         super(null);
     }
 
-    public AddFileOwner(FileInfo fileInfo) {
+    public FileStoringFailed(FileInfo fileInfo) {
         super(fileInfo);
     }
 }
