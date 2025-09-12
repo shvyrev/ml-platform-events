@@ -6,7 +6,7 @@ import lombok.Getter;
 @Getter
 public sealed class FileEvents extends BaseEvent permits StoreFile, DeleteFile,
         FileDeleted, FileDeletionFailed, FileStored, FileStoringFailed {
-    protected final FileInfo fileInfo;
+    private final FileInfo fileInfo;
 
     public FileEvents(FileInfo fileInfo) {
         this.fileInfo = fileInfo;
