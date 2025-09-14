@@ -22,17 +22,10 @@ public final class FileStoringFailed extends FileEvents {
         this.cause = null;
     }
 
-
-    public FileStoringFailed(String cause) {
-        super(null);
-        this.cause = cause;
-        this.actor = null;
-    }
-
-    public FileStoringFailed(FileCmdEvent event, String cause) {
+    public FileStoringFailed(FileCmdEvent event) {
         super(event.getFileInfo());
         this.actor = event.getActor();
-        this.cause = cause;
+        this.cause = null;
     }
 
     public FileStoringFailed(FileInfo fileInfo, Actor actor, String cause) {
