@@ -14,19 +14,30 @@ import lombok.experimental.Accessors;
 @ToString
 public final class FileStoringFailed extends FileEvents {
     private final Actor actor;
+    private final String cause;
 
     public FileStoringFailed() {
         super(null);
         this.actor = null;
+        this.cause = null;
     }
 
-    public FileStoringFailed(FileCmdEvent event) {
+
+    public FileStoringFailed(String cause) {
+        super(null);
+        this.cause = cause;
+        this.actor = null;
+    }
+
+    public FileStoringFailed(FileCmdEvent event, String cause) {
         super(event.getFileInfo());
         this.actor = event.getActor();
+        this.cause = cause;
     }
 
-    public FileStoringFailed(FileInfo fileInfo, Actor actor) {
+    public FileStoringFailed(FileInfo fileInfo, Actor actor, String cause) {
         super(fileInfo);
         this.actor = actor;
+        this.cause = cause;
     }
 }
