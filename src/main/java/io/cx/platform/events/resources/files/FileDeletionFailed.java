@@ -11,6 +11,7 @@ import lombok.experimental.Accessors;
 @ToString
 public final class FileDeletionFailed extends FileEvents {
     private final Actor actor;
+    private String cause;
 
     public FileDeletionFailed() {
         super(null);
@@ -22,8 +23,9 @@ public final class FileDeletionFailed extends FileEvents {
         this.actor = event.getActor();
     }
 
-    public FileDeletionFailed(FileInfo fileInfo, Actor actor) {
+    public FileDeletionFailed(FileInfo fileInfo, Actor actor, String cause) {
         super(fileInfo);
         this.actor = actor;
+        this.cause = cause;
     }
 }
