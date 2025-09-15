@@ -1,6 +1,8 @@
 package io.cx.platform.events.resources.files;
 
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,7 +19,9 @@ public final class FileDeleted extends FileEvents {
     public FileDeleted() {
         super(null);
     }
-    public FileDeleted(FileInfo fileInfo) {
+
+    @JsonCreator
+    public FileDeleted(@JsonProperty("fileInfo") FileInfo fileInfo) {
         super(fileInfo);
     }
 }

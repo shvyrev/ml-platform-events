@@ -17,6 +17,11 @@ import lombok.experimental.Accessors;
 public final class StoreFile extends FileEvents implements FileCmdEvent {
     private final Actor actor;
 
+    public StoreFile() {
+        super(null);
+        this.actor = null;
+    }
+
     public StoreFile(Actor actor) {
         super(null);
         this.actor = actor;

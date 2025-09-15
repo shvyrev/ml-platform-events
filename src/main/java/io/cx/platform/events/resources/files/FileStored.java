@@ -1,5 +1,7 @@
 package io.cx.platform.events.resources.files;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,7 +19,8 @@ public final class FileStored extends FileEvents {
         super(null);
     }
 
-    public FileStored(FileInfo fileInfo) {
+    @JsonCreator
+    public FileStored(@JsonProperty("fileInfo") final FileInfo fileInfo) {
         super(fileInfo);
     }
 }

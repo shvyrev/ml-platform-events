@@ -1,5 +1,7 @@
 package io.cx.platform.events.resources.files;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.cx.platform.events.actors.Actor;
 import lombok.*;
 import lombok.experimental.Accessors;
@@ -23,7 +25,11 @@ public final class FileDeletionFailed extends FileEvents {
         this.actor = event.getActor();
     }
 
-    public FileDeletionFailed(FileInfo fileInfo, Actor actor, String cause) {
+    @JsonCreator
+    public FileDeletionFailed(
+            @JsonProperty("fileInfo") FileInfo fileInfo,
+            @JsonProperty("actor") Actor actor,
+            @JsonProperty("cause") String cause) {
         super(fileInfo);
         this.actor = actor;
         this.cause = cause;

@@ -17,6 +17,11 @@ import lombok.experimental.Accessors;
 public final class DeleteFile extends FileEvents implements FileCmdEvent {
     private final Actor actor;
 
+    public DeleteFile() {
+        super(null);
+        this.actor = null;
+    }
+
     public DeleteFile(Actor actor) {
         super(null);
         this.actor = actor;
