@@ -1,4 +1,4 @@
-package io.cx.platform.events.resources.files;
+package io.cx.platform.events.resources.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,19 +8,17 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
 @ToString
-public final class FileStored extends FileEvents {
-
-    public FileStored() {
-        super(null);
-    }
+public final class ModelUnregistered extends ModelEvents {
 
     @JsonCreator
-    public FileStored(@JsonProperty("fileInfo") final FileInfo fileInfo) {
-        super(fileInfo);
+    public ModelUnregistered(@JsonProperty("modelId") UUID modelId) {
+        super(modelId);
     }
 }

@@ -6,8 +6,7 @@ import lombok.Getter;
 @Getter
 public sealed class JobEvents extends BaseEvent permits CopyFileEvent, DeleteFileEvent, DeleteModelVersionEvent,
         DeleteVersionFailedEvent, DeleteVersionStatusEvent, DeleteVersionSucceedEvent, JobCreatedEvent,
-        JobDeletedEvent, JobFailedEvent, JobSucceededEvent, RegisterUserModelVersionEvent,
-        RegistrationModelVersionFailedEvent, RegistrationModelVersionStatusEvent, RegistrationModelVersionSucceedEvent {
+        JobDeletedEvent, JobFailedEvent, JobSucceededEvent, RegistrationModelVersionFailedEvent {
     protected final JobInfo info;
 
     public JobEvents(JobInfo jobInfo) {
