@@ -6,10 +6,10 @@ import lombok.Getter;
 import java.util.UUID;
 
 @Getter
-public sealed class EndpointEvent extends BaseEvent permits EndpointCreated, EndpointUpdated, EndpointDeleted {
+public sealed class EndpointEvents extends BaseEvent permits EndpointCreated, EndpointUpdated, EndpointDeleted {
     private final UUID endpointId;
 
-    public EndpointEvent(UUID endpointId) {
+    public EndpointEvents(UUID endpointId) {
         this.endpointId = endpointId;
     }
 }

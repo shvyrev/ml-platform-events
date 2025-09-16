@@ -8,8 +8,6 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
-import java.util.Map;
-import java.util.Set;
 import java.util.UUID;
 
 @Getter
@@ -17,21 +15,15 @@ import java.util.UUID;
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
 @ToString
-public final class EndpointCreated extends EndpointEvent {
+public final class EndpointCreated extends EndpointEvents {
     private String userId;
-    private Set<UUID> roles;
-    private Map<String, String> labels;
 
     @JsonCreator
     public EndpointCreated(
             @JsonProperty("endpointId") UUID endpointId,
-            @JsonProperty("userId") String userId,
-            @JsonProperty("roles") Set<UUID> roles,
-            @JsonProperty("labels") Map<String, String> labels) {
+            @JsonProperty("userId") String userId) {
         super(endpointId);
         this.userId = userId;
-        this.roles = roles;
-        this.labels = labels;
     }
 
     public EndpointCreated() {

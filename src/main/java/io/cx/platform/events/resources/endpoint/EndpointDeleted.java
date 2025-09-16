@@ -15,7 +15,7 @@ import java.util.UUID;
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
 @ToString
-public final class EndpointDeleted extends EndpointEvent {
+public final class EndpointDeleted extends EndpointEvents {
     private String userId;
 
     public EndpointDeleted(UUID endpointId) {
