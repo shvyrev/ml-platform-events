@@ -16,9 +16,11 @@ import java.util.UUID;
 @EqualsAndHashCode(callSuper = true)
 @ToString
 public final class ModelUnregistered extends ModelEvents {
+    private String userId;
 
     @JsonCreator
-    public ModelUnregistered(@JsonProperty("modelId") UUID modelId) {
+    public ModelUnregistered(@JsonProperty("modelId") UUID modelId, @JsonProperty("userId") String userId) {
         super(modelId);
+        this.userId = userId;
     }
 }

@@ -16,6 +16,7 @@ import java.util.UUID;
 @EqualsAndHashCode(callSuper = true)
 @ToString
 public final class ModelVersionRegistered extends ModelEvents {
+    private String userId;
     private UUID versionId;
     private String userStoragePath;
 
@@ -27,10 +28,12 @@ public final class ModelVersionRegistered extends ModelEvents {
     public ModelVersionRegistered(
             @JsonProperty("modelId") UUID modelId,
             @JsonProperty("versionId") UUID versionId,
-            @JsonProperty("userStoragePath") String userStoragePath) {
+            @JsonProperty("userStoragePath") String userStoragePath,
+            @JsonProperty("userId") String userId) {
         super(modelId);
         this.versionId = versionId;
         this.userStoragePath = userStoragePath;
+        this.userId = userId;
     }
 
     public ModelVersionRegistered(UUID modelId) {
