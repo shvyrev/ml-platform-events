@@ -12,6 +12,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
 @ToString
+@Deprecated
 public final class DeleteRuntimeEvent extends ServingResourceEvents{
     public DeleteRuntimeEvent() {
         super(null);

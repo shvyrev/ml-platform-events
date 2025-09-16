@@ -15,6 +15,7 @@ import static java.util.Optional.ofNullable;
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
 @ToString
+@Deprecated
 public final class CreateRuntimeEvent extends ServingResourceEvents {
     private String schSizeLimit;
     private ContainerResources resources;
