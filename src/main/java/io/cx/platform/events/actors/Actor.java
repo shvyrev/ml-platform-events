@@ -8,7 +8,10 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 
 import java.util.Objects;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static java.util.function.Predicate.not;
 
 @Getter
 @Setter
@@ -17,6 +20,7 @@ import java.util.stream.Stream;
 public class Actor {
     private final ActorType type;
     private final String name;
+    private String user;
 
     @JsonCreator
     public Actor(
@@ -28,9 +32,10 @@ public class Actor {
 
     @Override
     public String toString() {
-        return Stream.of(getType(), getName())
+        return Stream.of(getType(), getName(), getUser())
                 .filter(Objects::nonNull)
                 .map(v -> v.toString().trim().toLowerCase())
-                .reduce("", (a, b) -> a + ":" + b);
+                .filter(not(String::isEmpty))
+                .collect(Collectors.joining(":"));
     }
 }

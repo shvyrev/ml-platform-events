@@ -15,7 +15,10 @@ import java.util.UUID;
 @JsonSubTypes({
         @JsonSubTypes.Type(value = EndpointCreated.class, name = "EndpointCreated"),
         @JsonSubTypes.Type(value = EndpointUpdated.class, name = "EndpointUpdated"),
-        @JsonSubTypes.Type(value = EndpointDeleted.class, name = "EndpointDeleted")
+        @JsonSubTypes.Type(value = EndpointDeleted.class, name = "EndpointDeleted"),
+        @JsonSubTypes.Type(value = DeployModel.class, name = "DeployModel"),
+        @JsonSubTypes.Type(value = UndeployModel.class, name = "UndeployModel"),
+        @JsonSubTypes.Type(value = UpdateDeployedModel.class, name = "UpdateDeployedModel")
 })
 @Getter
 public sealed class EndpointEvents extends BaseEvent permits DeployModel, UndeployModel, UpdateDeployedModel,
