@@ -22,6 +22,7 @@ import lombok.Getter;
 @Getter
 public sealed class ResourceEvents extends BaseEvent permits RuntimeCreated, RuntimeUpdated, RuntimeDeleted,
         InferenceCreated, InferenceUpdated, InferenceDeleted {
+
     private final ServingResourceInfo info;
 
     public ResourceEvents(ServingResourceInfo info) {
