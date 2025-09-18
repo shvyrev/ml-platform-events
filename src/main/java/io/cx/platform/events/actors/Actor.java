@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static java.util.Optional.ofNullable;
 import static java.util.function.Predicate.not;
 
 @Getter
@@ -18,6 +19,7 @@ import static java.util.function.Predicate.not;
 @Accessors(chain = true)
 @EqualsAndHashCode
 public class Actor {
+    public static final String DELIMITER = ":";
     private final ActorType type;
     private final String name;
     private String user;
@@ -36,6 +38,16 @@ public class Actor {
                 .filter(Objects::nonNull)
                 .map(v -> v.toString().trim().toLowerCase())
                 .filter(not(String::isEmpty))
-                .collect(Collectors.joining(":"));
+                .collect(Collectors.joining(DELIMITER));
+    }
+
+    public static Actor fromString(String value) {
+        return ofNullable(value)
+                .map(String::trim)
+                .filter(not(String::isEmpty))
+                .map(v -> v.split(DELIMITER))
+                .map(v -> new Actor(ActorType.fromString(v[0]), v[1])
+                        .setUser(v.length > 2 ? v[2] : null))
+                .orElseThrow(() -> new IllegalArgumentException("Actor string cannot be null or empty."));
     }
 }
