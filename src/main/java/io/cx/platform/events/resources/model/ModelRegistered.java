@@ -15,11 +15,11 @@ import java.util.UUID;
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
 @ToString
-public final class ModeRegistered extends ModelEvents {
+public final class ModelRegistered extends ModelEvents {
     private String userId;
 
     @JsonCreator
-    public ModeRegistered(@JsonProperty("modelId") UUID modelId, @JsonProperty("userId") String userId) {
+    public ModelRegistered(@JsonProperty("modelId") UUID modelId, @JsonProperty("userId") String userId) {
         super(modelId);
         this.userId = userId;
     }
