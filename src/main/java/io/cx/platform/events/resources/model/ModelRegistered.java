@@ -23,4 +23,5 @@ public final class ModelRegistered extends ModelEvents {
         super(modelId);
         this.userId = userId;
     }
+
 }
