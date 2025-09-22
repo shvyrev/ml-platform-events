@@ -41,6 +41,15 @@ public class Actor {
                 .collect(Collectors.joining(DELIMITER));
     }
 
+    public static boolean isValid(String value) {
+        return ofNullable(value)
+                .map(String::trim)
+                .filter(not(String::isEmpty))
+                .map(v -> v.split(DELIMITER))
+                .map(v -> v.length > 1)
+                .orElse(false);
+    }
+
     public static Actor fromString(String value) {
         return ofNullable(value)
                 .map(String::trim)
