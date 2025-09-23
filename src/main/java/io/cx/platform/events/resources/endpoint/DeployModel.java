@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
+import org.apache.kafka.common.protocol.types.Field;
 
 import java.util.UUID;
 
@@ -22,6 +23,8 @@ public final class DeployModel extends EndpointEvents implements CmdEvent {
     private UUID modelId;
     private UUID versionId;
     private Integer traffic;
+    private String modelFormat;
+    private String artifactPath;
 
     public DeployModel(UUID endpointId) {
         super(endpointId);
@@ -33,7 +36,8 @@ public final class DeployModel extends EndpointEvents implements CmdEvent {
             @JsonProperty("actor") Actor actor,
             @JsonProperty("modelId") UUID modelId,
             @JsonProperty("versionId") UUID versionId,
-            @JsonProperty("traffic") Integer traffic) {
+            @JsonProperty("traffic") Integer traffic,
+            @JsonProperty("modelFormat") String modelFormat) {
         super(endpointId);
         this.actor = actor;
         this.modelId = modelId;
