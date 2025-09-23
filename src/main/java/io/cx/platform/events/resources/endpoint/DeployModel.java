@@ -37,7 +37,8 @@ public final class DeployModel extends EndpointEvents implements CmdEvent {
             @JsonProperty("modelId") UUID modelId,
             @JsonProperty("versionId") UUID versionId,
             @JsonProperty("traffic") Integer traffic,
-            @JsonProperty("modelFormat") String modelFormat) {
+            @JsonProperty("modelFormat") String modelFormat,
+            @JsonProperty("artifactPath") String artifactPath) {
         super(endpointId);
         this.actor = actor;
         this.modelId = modelId;
