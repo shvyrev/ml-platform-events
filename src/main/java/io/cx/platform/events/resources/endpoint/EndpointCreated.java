@@ -20,6 +20,7 @@ import static java.util.Optional.ofNullable;
 @EqualsAndHashCode(callSuper = true)
 @ToString
 public final class EndpointCreated extends EndpointEvents {
+
     private String userId;
     private String schSizeLimit = GI_2;
     private InfraResources requestedResources = new InfraResources();
