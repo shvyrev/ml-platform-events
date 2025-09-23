@@ -17,9 +17,9 @@ import java.util.UUID;
 @EqualsAndHashCode(callSuper = true)
 @ToString
 public final class InferenceUpdated extends ResourceEvents {
-    private UUID modelId;
-    private UUID versionId;
-    private String runtimeName;
+    private UUID model;
+    private UUID version;
+    private UUID endpoint;
 
     public InferenceUpdated(ServingResourceInfo info) {
         super(info);
@@ -27,13 +27,13 @@ public final class InferenceUpdated extends ResourceEvents {
 
     @JsonCreator
     public InferenceUpdated(
-            @JsonProperty("modelId") UUID modelId,
-            @JsonProperty("versionId") UUID versionId,
-            @JsonProperty("runtimeName") String runtimeName,
+            @JsonProperty("model") UUID model,
+            @JsonProperty("version") UUID version,
+            @JsonProperty("endpoint") UUID endpoint,
             @JsonProperty("info") ServingResourceInfo info) {
         super(info);
-        this.modelId = modelId;
-        this.versionId = versionId;
-        this.runtimeName = runtimeName;
+        this.model = model;
+        this.version = version;
+        this.endpoint = endpoint;
     }
 }
