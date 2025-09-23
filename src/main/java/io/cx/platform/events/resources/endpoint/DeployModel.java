@@ -23,8 +23,8 @@ public final class DeployModel extends EndpointEvents implements CmdEvent {
     private UUID modelId;
     private UUID versionId;
     private Integer traffic;
-    private String modelFormat;
-    private String artifactPath;
+    private String modelFormat = "ONNX";
+    private String artifactPath = "";
 
     public DeployModel(UUID endpointId) {
         super(endpointId);
@@ -44,5 +44,7 @@ public final class DeployModel extends EndpointEvents implements CmdEvent {
         this.modelId = modelId;
         this.versionId = versionId;
         this.traffic = traffic;
+        this.modelFormat = modelFormat;
+        this.artifactPath = artifactPath;
     }
 }
