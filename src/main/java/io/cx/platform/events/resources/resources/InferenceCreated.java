@@ -19,7 +19,7 @@ import java.util.UUID;
 public final class InferenceCreated extends ResourceEvents {
     private UUID modelId;
     private UUID versionId;
-    private String runtimeName;
+    private UUID endpoint;
 
     public InferenceCreated(ServingResourceInfo info) {
         super(info);
@@ -29,11 +29,11 @@ public final class InferenceCreated extends ResourceEvents {
     public InferenceCreated(
             @JsonProperty("modelId") UUID modelId,
             @JsonProperty("versionId") UUID versionId,
-            @JsonProperty("runtimeName") String runtimeName,
+            @JsonProperty("endpoint") UUID endpoint,
             @JsonProperty("info") ServingResourceInfo info) {
         super(info);
         this.modelId = modelId;
         this.versionId = versionId;
-        this.runtimeName = runtimeName;
+        this.endpoint = endpoint;
     }
 }
