@@ -22,6 +22,7 @@ public final class InferenceDeleted extends ResourceEvents {
     private UUID version;
     private UUID endpoint;
     private String url;
+    private Integer traffic;
 
     public InferenceDeleted(ServingResourceInfo info) {
         super(info);
@@ -33,11 +34,13 @@ public final class InferenceDeleted extends ResourceEvents {
             @JsonProperty("version") UUID version,
             @JsonProperty("endpoint") UUID endpoint,
             @JsonProperty("url") String url,
+            @JsonProperty("traffic") Integer traffic,
             @JsonProperty("info") ServingResourceInfo info) {
         super(info);
         this.model = model;
         this.version = version;
         this.endpoint = endpoint;
         this.url = url;
+        this.traffic = traffic;
     }
 }
