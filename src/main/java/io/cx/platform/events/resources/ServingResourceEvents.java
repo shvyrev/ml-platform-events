@@ -4,6 +4,7 @@ import io.cx.platform.events.BaseEvent;
 import lombok.Getter;
 
 @Getter
+@Deprecated
 public sealed class ServingResourceEvents extends BaseEvent permits CreateInferenceServiceEvent, CreateRuntimeEvent,
         DeleteInferenceServiceEvent, DeleteRuntimeEvent, ServingResourceCreated,
         ServingResourceDeleted, ServingResourceUpdated {

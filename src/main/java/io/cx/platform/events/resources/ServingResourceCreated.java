@@ -13,6 +13,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
 @ToString
+@Deprecated
 public final class ServingResourceCreated extends ServingResourceEvents{
     public ServingResourceCreated() {
         super(null);
