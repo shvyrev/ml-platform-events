@@ -19,6 +19,7 @@ public class ServingResourceInfo {
     private ServingResourceType type;
     private ServingResourceStatus status;
     private String owner;
+    private Boolean ready;
     private Map<String, String> labels;
     private FailedStatus cause;
 }
