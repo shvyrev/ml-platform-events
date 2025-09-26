@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
-public record InferenceParameters(
+public record TritonConfig(
         // Спецификация для config.pbtxt
         @NotNull TritonPlatform platform,    // Платформа (например, ONNX)
         @NotNull Integer maxBatchSize,       // Максимальный размер батча (0 для отключения)
