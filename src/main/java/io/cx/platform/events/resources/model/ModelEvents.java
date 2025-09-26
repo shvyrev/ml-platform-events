@@ -25,7 +25,7 @@ import java.util.UUID;
 @Getter
 public sealed class ModelEvents extends BaseEvent permits RegisterModel, UnregisterModel,
         RegisterModelVersion, UnregisterModelVersion,
-        ModelRegistered, ModelUnregistered, ModelVersionRegistered, ModelVersionUnregistered {
+        ModelRegistered, ModelConfigUpdated, ModelUnregistered, ModelVersionRegistered, ModelVersionUnregistered {
     private final UUID modelId;
 
     public ModelEvents(UUID modelId) {
