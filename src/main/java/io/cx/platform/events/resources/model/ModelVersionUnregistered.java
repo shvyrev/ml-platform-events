@@ -14,19 +14,14 @@ import java.util.UUID;
 @ToString
 public final class ModelVersionUnregistered extends ModelEvents {
     private UUID versionId;
+    private String userId;
 
     @JsonCreator
     public ModelVersionUnregistered(@JsonProperty("modelId") UUID modelId,
+                                    @JsonProperty("userId") String userId,
                                     @JsonProperty("versionId") UUID versionId) {
         super(modelId);
+        this.userId = userId;
         this.versionId = versionId;
-    }
-
-    public ModelVersionUnregistered() {
-        super(null);
-    }
-
-    public ModelVersionUnregistered(UUID modelId) {
-        super(modelId);
     }
 }
