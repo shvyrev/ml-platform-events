@@ -17,14 +17,11 @@ import java.util.UUID;
 @ToString
 public final class ConfigNotUpdated extends ResourceEvents {
     private UUID model;
-    private String reason;
 
     @JsonCreator
     public ConfigNotUpdated(@JsonProperty("info") ServingResourceInfo info,
-                            @JsonProperty("model") UUID model,
-                            @JsonProperty("reason") String reason) {
+                            @JsonProperty("model") UUID model) {
         super(info);
         this.model = model;
-        this.reason = reason;
     }
 }

@@ -18,7 +18,6 @@ import java.util.UUID;
 @ToString
 public final class ModelNotDeleted extends ResourceEvents {
     private UUID model;
-    private String reason;
 
     public ModelNotDeleted(ServingResourceInfo info) {
         super(info);
@@ -26,10 +25,8 @@ public final class ModelNotDeleted extends ResourceEvents {
 
     @JsonCreator
     public ModelNotDeleted(@JsonProperty("model") UUID model,
-                           @JsonProperty("info") ServingResourceInfo info,
-                           @JsonProperty("reason") String reason) {
+                           @JsonProperty("info") ServingResourceInfo info) {
         super(info);
         this.model = model;
-        this.reason = reason;
     }
 }

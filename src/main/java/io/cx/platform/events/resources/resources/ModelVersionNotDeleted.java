@@ -19,7 +19,6 @@ import java.util.UUID;
 public final class ModelVersionNotDeleted extends ResourceEvents {
     private UUID model;
     private UUID version;
-    private String reason;
 
     public ModelVersionNotDeleted(ServingResourceInfo info) {
         super(info);
@@ -28,11 +27,9 @@ public final class ModelVersionNotDeleted extends ResourceEvents {
     @JsonCreator
     public ModelVersionNotDeleted(@JsonProperty("info") ServingResourceInfo info,
                                   @JsonProperty("model") UUID model,
-                                  @JsonProperty("version") UUID version,
-                                  @JsonProperty("reason") String reason) {
+                                  @JsonProperty("version") UUID version) {
         super(info);
         this.model = model;
         this.version = version;
-        this.reason = reason;
     }
 }
