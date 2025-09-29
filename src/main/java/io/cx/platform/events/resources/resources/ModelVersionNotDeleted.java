@@ -25,9 +25,9 @@ public final class ModelVersionNotDeleted extends ResourceEvents {
     }
 
     @JsonCreator
-    public ModelVersionNotDeleted(@JsonProperty("info") ServingResourceInfo info,
-                                  @JsonProperty("model") UUID model,
-                                  @JsonProperty("version") UUID version) {
+    public ModelVersionNotDeleted(@JsonProperty("model") UUID model,
+                                  @JsonProperty("version") UUID version,
+                                  @JsonProperty("info") ServingResourceInfo info) {
         super(info);
         this.model = model;
         this.version = version;
