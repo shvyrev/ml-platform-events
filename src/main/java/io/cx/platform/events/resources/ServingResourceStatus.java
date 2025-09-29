@@ -8,5 +8,6 @@ public enum ServingResourceStatus {
     FAILEDTOLOAD,
     FAILED,
     DELETED,
-    READY;
+    READY,
+    COMPLETE;
 }

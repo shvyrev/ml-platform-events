@@ -10,6 +10,7 @@ import static java.util.Arrays.stream;
 public enum ServingResourceType {
     RUNTIME("cluster-serving-runtime"),
     INFERENCE("inference-service"),
+    JOB("job"),
     UNKNOWN_TYPE("unknown");
 
     private String value;
