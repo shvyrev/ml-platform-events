@@ -20,7 +20,12 @@ import lombok.Getter;
         @JsonSubTypes.Type(value = InferenceDeleted.class, name = "inferenceDeleted")
 })
 @Getter
-public sealed class ResourceEvents extends BaseEvent permits RuntimeCreated, RuntimeUpdated, RuntimeDeleted,
+public sealed class ResourceEvents extends BaseEvent permits
+        ConfigUpdated, ConfigNotUpdated,
+        ModelVersionStored, ModelVersionNotStored,
+        ModelVersionDeleted, ModelVersionNotDeleted,
+        ModelDeleted, ModelNotDeleted,
+        RuntimeCreated, RuntimeUpdated, RuntimeDeleted,
         InferenceCreated, InferenceUpdated, InferenceDeleted {
 
     private final ServingResourceInfo info;
