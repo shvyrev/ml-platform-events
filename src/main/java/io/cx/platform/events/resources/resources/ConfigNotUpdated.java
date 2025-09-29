@@ -19,8 +19,8 @@ public final class ConfigNotUpdated extends ResourceEvents {
     private UUID model;
 
     @JsonCreator
-    public ConfigNotUpdated(@JsonProperty("info") ServingResourceInfo info,
-                            @JsonProperty("model") UUID model) {
+    public ConfigNotUpdated(@JsonProperty("model") UUID model,
+                            @JsonProperty("info") ServingResourceInfo info) {
         super(info);
         this.model = model;
     }

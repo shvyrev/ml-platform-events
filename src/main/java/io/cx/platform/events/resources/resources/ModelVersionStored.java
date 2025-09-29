@@ -26,8 +26,8 @@ public final class ModelVersionStored extends ResourceEvents {
 
     @JsonCreator
     public ModelVersionStored(@JsonProperty("model") UUID model,
-                              @JsonProperty("info") ServingResourceInfo info,
-                              @JsonProperty("version") UUID version) {
+                              @JsonProperty("version") UUID version,
+                              @JsonProperty("info") ServingResourceInfo info) {
         super(info);
         this.model = model;
         this.version = version;

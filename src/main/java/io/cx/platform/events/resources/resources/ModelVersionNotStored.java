@@ -26,8 +26,8 @@ public final class ModelVersionNotStored extends ResourceEvents {
 
     @JsonCreator
     public ModelVersionNotStored(@JsonProperty("model") UUID model,
-                                 @JsonProperty("info") ServingResourceInfo info,
-                                 @JsonProperty("version") UUID version) {
+                                 @JsonProperty("version") UUID version,
+                                 @JsonProperty("info") ServingResourceInfo info) {
         super(info);
         this.model = model;
         this.version = version;
