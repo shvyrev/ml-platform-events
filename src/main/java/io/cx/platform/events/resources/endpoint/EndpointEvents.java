@@ -21,7 +21,8 @@ import java.util.UUID;
         @JsonSubTypes.Type(value = UpdateDeployedModel.class, name = "UpdateDeployedModel")
 })
 @Getter
-public sealed class EndpointEvents extends BaseEvent permits DeployModel, UndeployModel, UpdateDeployedModel,
+public sealed class EndpointEvents extends BaseEvent permits
+        DeployModel, UndeployModel, UpdateDeployedModel,
         EndpointCreated, EndpointUpdated, EndpointDeleted {
     private final UUID endpointId;
 

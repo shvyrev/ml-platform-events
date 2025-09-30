@@ -23,9 +23,11 @@ import java.util.UUID;
         @JsonSubTypes.Type(value = ModelVersionUnregistered.class, name = "modelVersionUnregistered")
 })
 @Getter
-public sealed class ModelEvents extends BaseEvent permits RegisterModel, UnregisterModel,
+public sealed class ModelEvents extends BaseEvent permits
+        RegisterModel, UnregisterModel,
         RegisterModelVersion, UnregisterModelVersion,
-        ModelRegistered, ModelConfigUpdated, ModelUnregistered, ModelVersionRegistered, ModelVersionUnregistered {
+        ModelRegistered, ModelConfigUpdated, ModelUnregistered,
+        ModelVersionRegistered, ModelVersionUnregistered {
     private final UUID modelId;
 
     public ModelEvents(UUID modelId) {
