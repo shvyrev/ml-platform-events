@@ -19,6 +19,7 @@ public final class ModelVersionRegistered extends ModelEvents {
     private String userId;
     private UUID versionId;
     private String userStoragePath;
+    private ModelType type = ModelType.ONNX;
 
     public ModelVersionRegistered() {
         super(null);
@@ -29,7 +30,9 @@ public final class ModelVersionRegistered extends ModelEvents {
             @JsonProperty("modelId") UUID modelId,
             @JsonProperty("versionId") UUID versionId,
             @JsonProperty("userStoragePath") String userStoragePath,
-            @JsonProperty("userId") String userId) {
+            @JsonProperty("userId") String userId,
+            @JsonProperty("type") ModelType type
+    ) {
         super(modelId);
         this.versionId = versionId;
         this.userStoragePath = userStoragePath;
