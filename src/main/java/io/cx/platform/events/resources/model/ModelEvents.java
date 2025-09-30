@@ -13,6 +13,7 @@ import java.util.UUID;
         property = "eventType"
 )
 @JsonSubTypes({
+        @JsonSubTypes.Type(value = ModelConfigUpdated.class, name = "modelConfigUpdated"),
         @JsonSubTypes.Type(value = RegisterModel.class, name = "registerModel"),
         @JsonSubTypes.Type(value = UnregisterModel.class, name = "unregisterModel"),
         @JsonSubTypes.Type(value = RegisterModelVersion.class, name = "registerModelVersion"),
