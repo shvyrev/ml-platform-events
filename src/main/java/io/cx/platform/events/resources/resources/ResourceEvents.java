@@ -12,6 +12,12 @@ import lombok.Getter;
         property = "eventType"
 )
 @JsonSubTypes({
+        @JsonSubTypes.Type(value = ConfigUpdated.class, name = "configUpdated"),
+        @JsonSubTypes.Type(value = ConfigNotUpdated.class, name = "configNotUpdated"),
+        @JsonSubTypes.Type(value = ModelVersionStored.class, name = "modelVersionStored"),
+        @JsonSubTypes.Type(value = ModelVersionNotStored.class, name = "modelVersionNotStored"),
+        @JsonSubTypes.Type(value = ModelVersionDeleted.class, name = "modelVersionDeleted"),
+        @JsonSubTypes.Type(value = ModelVersionNotDeleted.class, name = "modelVersionNotDeleted"),
         @JsonSubTypes.Type(value = RuntimeCreated.class, name = "runtimeCreated"),
         @JsonSubTypes.Type(value = RuntimeUpdated.class, name = "runtimeUpdated"),
         @JsonSubTypes.Type(value = RuntimeDeleted.class, name = "runtimeDeleted"),
