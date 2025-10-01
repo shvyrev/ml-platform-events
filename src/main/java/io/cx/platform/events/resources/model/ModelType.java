@@ -11,17 +11,17 @@ public enum ModelType {
     // -----------------------------------------------------------------------------------------------------------------
     // |                                         TRITON BACKEND | DEFAULT FILENAME  | RECURSIVE COPY |
     // -----------------------------------------------------------------------------------------------------------------
-    ONNX("onnxruntime", "model.onnx", false),            // Единый файл
+    ONNX("onnxruntime", "model.onnx", true),            // Единый файл
     TENSORFLOW("tensorflow", null, true),                // Папка (SavedModel)
-    PYTORCH("pytorch", "model.pt", false),               // Единый файл (TorchScript)
-    TENSORRT("tensorrt", "model.plan", false),           // Единый файл (Plan)
+    PYTORCH("pytorch", "model.pt", true),               // Единый файл (TorchScript)
+    TENSORRT("tensorrt", "model.plan", true),           // Единый файл (Plan)
     OPEN_VINO("openvino", null, true),                   // Папка (model.xml + model.bin)
-    SKLEARN("fil", "model.joblib", false),               // Единый файл (FIL/Joblib)
-    XGBOOST("fil", "model.bin", false),                  // Единый файл (FIL/Binary)
+    SKLEARN("fil", "model.joblib", true),               // Единый файл (FIL/Joblib)
+    XGBOOST("fil", "model.bin", true),                  // Единый файл (FIL/Binary)
     // Keras не является прямым бэкендом Triton, он работает через TF.
     // Если вы используете Keras H5, он должен быть конвертирован в TF SavedModel
     // или использован с TF backend (но это не идиоматично).
-    KERAS_H5("tensorflow", "model.h5", false);          // Часто обрабатывается как одиночный файл TF.
+    KERAS_H5("tensorflow", "model.h5", true);          // Часто обрабатывается как одиночный файл TF.
     // -----------------------------------------------------------------------------------------------------------------
 
 
